@@ -19,6 +19,7 @@
 #####################################################################
 
 # location of java executable
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 if [ -f "$JAVA_HOME/bin/java" ]; then
   JAVA="$JAVA_HOME/bin/java"
 else

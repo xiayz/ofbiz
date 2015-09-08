@@ -397,8 +397,8 @@ under the License.
         <key-map field-name="agreementTypeId"/>
       </relation>
     </entity>
-    <entity entity-name="AgreementWorkEffortApplic" 
-            package-name="org.ofbiz.party.agreement" 
+    <entity entity-name="AgreementWorkEffortApplic"
+            package-name="org.ofbiz.party.agreement"
             title="Agreement WorkEffort Application Entity">
         <field name="agreementId" type="id-ne"></field>
         <field name="agreementItemSeqId" type="id-ne"></field>
@@ -1195,6 +1195,7 @@ under the License.
       <field name="countyGeoId" type="id"></field>
       <field name="postalCodeGeoId" type="id"></field>
       <field name="geoPointId" type="id"></field>
+      <field name="planet" type="name"></field>
       <prim-key field="contactMechId"/>
       <relation type="one" fk-name="POST_ADDR_CMECH" rel-entity-name="ContactMech">
         <key-map field-name="contactMechId"/>
@@ -1678,7 +1679,7 @@ under the License.
       <key-map field-name="partyId"/>
     </view-link>
   </view-entity>
-  
+
      <entity entity-name="PartyIdentification"
             package-name="org.ofbiz.party.party"
             title="Party Identification Entity">
@@ -1696,7 +1697,7 @@ under the License.
       <index name="PARTY_ID_VALIDX" unique="false">
           <index-field name="idValue"/>
       </index>
-    </entity> 
+    </entity>
     <view-entity entity-name="PartyIdentificationAndParty"
                 package-name="org.ofbiz.party.party"
                 title="PartyIdentification and Party View Entity">
@@ -1726,7 +1727,7 @@ under the License.
         <key-map field-name="parentTypeId" rel-field-name="partyIdentificationTypeId"/>
       </relation>
     </entity>
-  
+
     <entity entity-name="PartyGeoPoint"
         package-name="org.ofbiz.party.party"
         title="Party Geo Location with history">
@@ -2946,6 +2947,6 @@ under the License.
             <entity-condition filter-by-date="true"/>
         </view-link>
     </view-entity>
-    
-    
+
+
 </entitymodel>

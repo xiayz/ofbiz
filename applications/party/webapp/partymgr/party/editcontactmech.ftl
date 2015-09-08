@@ -54,7 +54,7 @@ under the License.
         <#if preContactMechTypeId??><input type="hidden" name="preContactMechTypeId" value="${preContactMechTypeId}" /></#if>
         <#if contactMechPurposeTypeId??><input type="hidden" name="contactMechPurposeTypeId" value="${contactMechPurposeTypeId!}" /></#if>
         <#if paymentMethodId?has_content><input type='hidden' name='paymentMethodId' value='${paymentMethodId}' /></#if>
-  <#else>  
+  <#else>
     <h1>${uiLabelMap.PartyEditContactInformation}</h1>
     <div id="mech-purpose-types">
       <table class="basic-table" cellspacing="0">
@@ -84,7 +84,7 @@ under the License.
                          <input type="hidden" name="fromDate" value="${partyContactMechPurpose.fromDate.toString()}" />
                          <input type="hidden" name="DONE_PAGE" value="${donePage?replace("=","%3d")}" />
                          <input type="hidden" name="useValues" value="true" />
-                         <a href="javascript:document.deletePartyContactMechPurpose_${partyContactMechPurpose.contactMechPurposeTypeId}.submit()" class="buttontext">${uiLabelMap.CommonDelete}</a> 
+                         <a href="javascript:document.deletePartyContactMechPurpose_${partyContactMechPurpose.contactMechPurposeTypeId}.submit()" class="buttontext">${uiLabelMap.CommonDelete}</a>
                        </form>
                     </td>
                   </tr>
@@ -160,12 +160,12 @@ under the License.
         <input type="text" size="30" maxlength="60" name="postalCode" value="${(mechMap.postalAddress.postalCode)?default(request.getParameter('postalCode')!)}" />
       </td>
     </tr>
-    <tr>   
+    <tr>
       <td class="label">${uiLabelMap.CommonCountry}</td>
-      
-      <td>     
+
+      <td>
         <select name="countryGeoId" id="editcontactmechform_countryGeoId">
-          ${screens.render("component://common/widget/CommonScreens.xml#countries")}        
+          ${screens.render("component://common/widget/CommonScreens.xml#countries")}
           <#if (mechMap.postalAddress??) && (mechMap.postalAddress.countryGeoId??)>
             <#assign defaultCountryGeoId = mechMap.postalAddress.countryGeoId>
           <#else>
@@ -186,6 +186,13 @@ under the License.
     </tr>
 
   <#elseif "TELECOM_NUMBER" = mechMap.contactMechTypeId!>
+    <tr>
+      <td class="label">Planet</td>
+      <td>
+        <input type="text" size="30" maxlength="100" name="planet"
+        value="${(mechMap.postalAddress.planet)!}">
+      </td>
+    </tr>
     <tr>
       <td class="label">${uiLabelMap.PartyPhoneNumber}</td>
       <td>
